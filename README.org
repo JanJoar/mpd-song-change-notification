@@ -4,7 +4,7 @@ This is a shell script to display a notification via ~notify-send~ when the song
 
 * Installation
 
-Either clone the repository and run the ~~notifications.sh~ file as an executable or, if you don't want the ~README~ and ~.git~ files, use this.
+Either clone the repository and run the ~notifications.sh~ file as an executable or, if you don't want the ~README.org~ and ~.git~ files, use this.
 
 #+BEGIN_SRC bash
   wget https://github.com/JanJoar/mpd-song-change-notification/blob/main/notifications.sh && wget https://github.com/JanJoar/mpd-song-change-notification/blob/main/notfound.jpg && chmod +x ./notifications.sh
