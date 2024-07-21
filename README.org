@@ -1,15 +1,25 @@
 #+title: MPD song-change notifications
 
-This is a shell script to display a notification via ~notify-send~ when the song played by MPD changes. It uses ~ffmpeg~ to extract embedded album art and so doesn't require a directory filled with ~.jpg~- and/or ~.png~-files.
+This is a shell script to display a notification via ~notify-send~ when the song played by MPD changes. It uses ~ffmpeg~ to extract embedded album art and so doesn't require a directory filled with ~.jpg~- and/or ~.png~-files. It looks for files in ~$HOME/Music/~, but this can easily be changed.
 
 * Installation
 
 Either clone the repository and run the ~~notifications.sh~ file as an executable or, if you don't want the ~README~ and ~.git~ files, use this.
 
 #+BEGIN_SRC bash
+  wget https://github.com/JanJoar/mpd-song-change-notification/blob/main/notifications.sh && wget https://github.com/JanJoar/mpd-song-change-notification/blob/main/notfound.jpg && chmod +x ./notifications.sh
+#+END_SRC
 
+Then simply run the script as like this:
+
+#+BEGIN_SRC bash
+  ./notifications.sh
 #+END_SRC
 
 * How to use the script
 
 Currently this does not run as a background process, as I wanted to avoid constantly polling MPD to see if ~mpc current~ changed. The author executes this through [[https://github.com/ncmpcpp/ncmpcpp][ncmpcpp]]'s ~execute_on_song_change~ configuration option.
+
+* Dependencies
+
+The script requires ~bash~, ~ffmepg~, and ~notify-send~.
